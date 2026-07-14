@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+._*
+
+# Windows installer binaries and bundled third-party installers
+*.exe
+*.msi
+*.zip
+*.7z
+*.rar
+
+# Local/generated NSIS output
+Dosemealti_Belediyesi_Installer.exe
+build/
+dist/
+output/
+
+# Official or internal municipality assets kept local
+dosbel.ico
+kapak.png
+kapak.bmp
+
+# Internal/local license text used during private builds
+lisans.txt
+
+# Old local NSIS language helper files not required by the public script
+LangFile.nsh
+Turk.nsh
