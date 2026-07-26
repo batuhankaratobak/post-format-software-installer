@@ -42,7 +42,8 @@ Visual and helper files used in private builds:
 - `dosbel.ico`: Installer icon file.
 - `kapak.png`: Cover image for the installer interface.
 - `kapak.bmp`: Bitmap version of `kapak.png` for NSIS Modern UI compatibility.
-- `lisans.txt`: Internal license text used by the installer.
+- `LICENSE_DEMO.txt`: Public-safe placeholder license text for demos and repository previews.
+- `lisans.txt`: Internal license text used only for private builds.
 - `installer_script.nsi`: Main NSIS installation script.
 
 ## Technical Structure
@@ -65,6 +66,7 @@ Implemented improvements:
 - `Uninstall.exe` generation was added.
 - Installation progress messages were added with `DetailPrint`.
 - The cover image was converted to BMP for NSIS compatibility.
+- The script now uses `LICENSE_DEMO.txt` by default so public demos do not expose internal license text.
 
 ## Important Note
 
@@ -94,6 +96,8 @@ The following files should not be committed because of security, licensing, and 
 These files stay in the local working folder but are not pushed to the repository. The `.gitignore` file is configured for this.
 
 The absence of these files from GitHub does not mean the project is incomplete. They are intentionally excluded and should be added locally before building.
+
+The repository includes `LICENSE_DEMO.txt` for public-safe demos. Private institutional builds can still use `lisans.txt` by passing it as the license file during NSIS compilation.
 
 Local visual assets should be placed in the project root with these filenames:
 
@@ -125,6 +129,18 @@ Build command:
 makensis installer_script.nsi
 ```
 
+Private build with internal license text:
+
+```powershell
+makensis /DLICENSE_FILE=lisans.txt installer_script.nsi
+```
+
+Public demo build with neutral local visuals:
+
+```powershell
+makensis /DICON_FILE=demo.ico /DWELCOME_BITMAP=demo.bmp installer_script.nsi
+```
+
 Expected output:
 
 ```text
@@ -144,6 +160,20 @@ Dosemealti_Belediyesi_Installer.exe
 - [ ] Mozilla Firefox starts when Firefox is selected.
 - [ ] Multiple selected components each run only once.
 - [ ] `Uninstall.exe` is created after installation.
+
+## Public Video Demo Notes
+
+For public videos, screenshots, or portfolio presentations, use only demo or placeholder materials.
+
+Recommended recording flow:
+
+1. Show the GitHub repository and README.
+2. Explain that installer binaries, official assets, and internal license files are excluded from the repository.
+3. Add local placeholder files for the build.
+4. Compile the installer with NSIS.
+5. Open the installer and show the welcome page, demo license page, and component selection page.
+
+Avoid showing internal license text, official institutional documents, credentials, network paths, device names, or real production computers.
 
 ## Future Improvements
 

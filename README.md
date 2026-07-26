@@ -36,6 +36,8 @@ For privacy, licensing, and security reasons, the following files are intentiona
 
 These files should remain local and should not be pushed to GitHub.
 
+The public repository includes `LICENSE_DEMO.txt` as a safe placeholder license page for demos, videos, and repository previews. It does not contain internal institutional terms.
+
 ## Where to Put Local Assets
 
 The repository does not include official images or installer binaries. This does not mean the project is incomplete.
@@ -59,6 +61,24 @@ FirefoxSetup.exe
 ```
 
 These local files are ignored by `.gitignore` and are used only for private/internal builds.
+
+For a private institutional build, use the internal license file by passing a custom license file to NSIS:
+
+```powershell
+makensis /DLICENSE_FILE=lisans.txt installer_script.nsi
+```
+
+For a public demo or video recording, use the default demo license:
+
+```powershell
+makensis installer_script.nsi
+```
+
+If you want to use neutral demo visuals instead of official assets, pass alternative local files during compilation:
+
+```powershell
+makensis /DICON_FILE=demo.ico /DWELCOME_BITMAP=demo.bmp installer_script.nsi
+```
 
 ## Project Structure
 
@@ -91,6 +111,19 @@ Expected output:
 ```text
 Dosemealti_Belediyesi_Installer.exe
 ```
+
+## Video Demo Guidance
+
+For public videos or portfolio sharing, use demo or placeholder assets instead of official logos, internal license text, or real institution-specific files.
+
+Recommended video flow:
+
+- Show the GitHub repository and README.
+- Explain that real installers and official assets are intentionally excluded.
+- Add local placeholder files for the build.
+- Build the installer with NSIS.
+- Open the installer and show the welcome, demo license, and component selection pages.
+- Avoid showing internal license text, official documents, credentials, device names, network paths, or real production machines.
 
 ## Test Checklist
 

@@ -1,0 +1,11 @@
+DEMO LICENSE AND USAGE NOTICE
+
+This installer project is provided for demonstration and portfolio purposes.
+
+The repository contains only the NSIS source script and documentation. It does not include real third-party installer binaries, official institution assets, internal license text, credentials, network information, or private operational data.
+
+When this project is used in a real internal environment, the organization should provide its own approved license text, official visual assets, and verified installer files locally before building the final installer.
+
+The demo materials shown in public videos, screenshots, or repository previews are placeholders and should not be treated as an official institutional distribution.
+
+Prepared by: Batuhan Karatobak

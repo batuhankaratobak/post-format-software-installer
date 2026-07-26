@@ -16,10 +16,22 @@ VIAddVersionKey "FileDescription" "Format sonrasi temel yazilim kurulum paketi"
 VIAddVersionKey "FileVersion" "1.1"
 VIAddVersionKey "LegalCopyright" "Copyright 2026 Dosemealti Belediyesi"
 
+!ifndef LICENSE_FILE
+  !define LICENSE_FILE "LICENSE_DEMO.txt"
+!endif
+
+!ifndef ICON_FILE
+  !define ICON_FILE "dosbel.ico"
+!endif
+
+!ifndef WELCOME_BITMAP
+  !define WELCOME_BITMAP "kapak.bmp"
+!endif
+
 !define MUI_ABORTWARNING
-!define MUI_ICON "dosbel.ico"
-!define MUI_UNICON "dosbel.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "kapak.bmp"
+!define MUI_ICON "${ICON_FILE}"
+!define MUI_UNICON "${ICON_FILE}"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "${WELCOME_BITMAP}"
 !define MUI_WELCOMEPAGE_TITLE "Dosemealti Belediyesi Yazilim Yukleyicisi"
 !define MUI_WELCOMEPAGE_TEXT "Bu sihirbaz, format sonrasi gerekli temel yazilimlari kurmak icin hazirlanmistir.$\r$\n$\r$\nDevam etmeden once acik programlari kapatmaniz onerilir."
 !define MUI_COMPONENTSPAGE_TEXT_TOP "Kurmak istediginiz yazilimlari secin."
@@ -28,7 +40,7 @@ VIAddVersionKey "LegalCopyright" "Copyright 2026 Dosemealti Belediyesi"
 !define MUI_FINISHPAGE_TEXT "Secilen yazilimlar icin kurulum islemi tamamlandi."
 
 !insertmacro MUI_PAGE_WELCOME
-!insertmacro MUI_PAGE_LICENSE "lisans.txt"
+!insertmacro MUI_PAGE_LICENSE "${LICENSE_FILE}"
 !insertmacro MUI_PAGE_COMPONENTS
 !insertmacro MUI_PAGE_DIRECTORY
 !insertmacro MUI_PAGE_INSTFILES
