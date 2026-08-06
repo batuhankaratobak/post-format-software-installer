@@ -112,19 +112,6 @@ Expected output:
 Dosemealti_Belediyesi_Installer.exe
 ```
 
-## Video Demo Guidance
-
-For public videos or portfolio sharing, use demo or placeholder assets instead of official logos, internal license text, or real institution-specific files.
-
-Recommended video flow:
-
-- Show the GitHub repository and README.
-- Explain that real installers and official assets are intentionally excluded.
-- Add local placeholder files for the build.
-- Build the installer with NSIS.
-- Open the installer and show the welcome, demo license, and component selection pages.
-- Avoid showing internal license text, official documents, credentials, device names, network paths, or real production machines.
-
 ## Test Checklist
 
 - [ ] The NSIS build completes successfully.
@@ -136,4 +123,4 @@ Recommended video flow:
 
 ## Note
 
-This repository shares the project structure and source script only. Real installer files, official visual assets, and internal license documents should stay outside the repository.
+This repository shares the project structure and source script only. Real installer files, official visual assets, and internal license documents is outside the repository.
